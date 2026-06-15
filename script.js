@@ -69,6 +69,13 @@ const solutionButtons = [
 ];
 const nextButton = document.getElementById('next-button');
 const restartButton = document.getElementById('restart-button');
+const newGameButton = document.getElementById('new-game');
+const howToPlayButton = document.getElementById('how-to-play');
+const leaderboardButton = document.getElementById('leaderboard');
+const infoPanel = document.getElementById('info-panel');
+const infoTitle = document.getElementById('info-title');
+const infoContent = document.getElementById('info-content');
+const closeInfoButton = document.getElementById('close-info');
 
 let budget = 1000;
 let peopleServed = 0;
@@ -172,6 +179,49 @@ solutionButtons.forEach((button, index) => {
 
 nextButton.addEventListener('click', nextVillage);
 restartButton.addEventListener('click', restartGame);
+newGameButton.addEventListener('click', restartGame);
+howToPlayButton.addEventListener('click', () => showInfo('how-to-play'));
+leaderboardButton.addEventListener('click', () => showInfo('leaderboard'));
+closeInfoButton.addEventListener('click', hideInfo);
+infoPanel.addEventListener('click', (event) => {
+  if (event.target === infoPanel) hideInfo();
+});
+
+function showInfo(type) {
+  infoPanel.classList.remove('hidden');
+  infoPanel.setAttribute('aria-hidden', 'false');
+
+  if (type === 'how-to-play') {
+    infoTitle.textContent = 'How to Play';
+    infoContent.innerHTML = `
+      <p>Follow these steps to help every village with clean water:</p>
+      <ul>
+        <li>Review the village problem and population.</li>
+        <li>Choose one of three solutions within your budget.</li>
+        <li>See if the solution succeeds and how many people are served.</li>
+        <li>Click Next Village to move forward.</li>
+        <li>When the loop ends, restart to try again.</li>
+      </ul>
+      <p>Your score is based on people served and budget kept for the final total.</p>
+    `;
+  } else {
+    infoTitle.textContent = 'Leaderboard';
+    infoContent.innerHTML = `
+      <p>Top field teams in the Clean Drop challenge:</p>
+      <ol class="leaderboard-list">
+        <li><strong>Team Ripple</strong> — 3,420 people helped</li>
+        <li><strong>Team Flow</strong> — 3,110 people helped</li>
+        <li><strong>Team Wave</strong> — 2,950 people helped</li>
+      </ol>
+      <p>Play again to see if you can beat the leaderboard with smarter funding decisions.</p>
+    `;
+  }
+}
+
+function hideInfo() {
+  infoPanel.classList.add('hidden');
+  infoPanel.setAttribute('aria-hidden', 'true');
+}
 
 updateStatus();
 showVillage();
