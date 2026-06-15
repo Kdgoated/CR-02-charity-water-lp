@@ -7,48 +7,89 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header class="topbar">
+        <div class="topbar-brand">CLEAN DROP - WIREFRAME</div>
+        <nav class="topnav">
+            <a href="#">MENU</a>
+            <a href="#">VILLAGES</a>
+            <a href="#">SOLUTIONS</a>
+            <a href="#">IMPACT</a>
+        </nav>
+    </header>
+
     <!-- Hero Section: This is the main banner at the top of the page -->
     <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Drop</h1>
-        <!-- Subheadline -->
-        <p>Use your budget to build clean water systems for real village challenges.</p>
+        <span class="hero-label">GAME TITLE</span>
+        <h1>CLEAN DROP</h1>
+        <p class="hero-subtitle">a charity: water simulation</p>
+
+        <div class="objective-card">
+            <h2>OBJECTIVE</h2>
+            <p>Allocate a $50,000 budget across villages. Choose solutions, calculate impact, and build lasting water access.</p>
+        </div>
+
+        <div class="hero-actions">
+            <button id="new-game" class="ghost-button">NEW GAME</button>
+            <button id="how-to-play" class="ghost-button">HOW TO PLAY</button>
+            <button id="leaderboard" class="ghost-button">LEADERBOARD</button>
+        </div>
     </section>
 
     <!-- Game Section: This is the main game area -->
-    <section class="game-section">
-      <h2>Play: Help More People</h2>
+    <section class="game-section" id="game-section">
+      <div class="game-panel game-overview">
+        <div class="game-overview-header">
+          <span class="game-badge">Clean Drop</span>
+          <h2>Fund clean water for villages</h2>
+          <p>Use your fixed budget to choose the best solution, help people, and move to the next village.</p>
+        </div>
+      </div>
+
       <div class="game-grid">
-        <div class="game-panel">
+        <aside class="game-panel status-column">
+          <h3>Mission Control</h3>
           <div class="status-card">
-            <h3>Budget</h3>
+            <div class="status-label">💧 Budget</div>
             <p>$<span id="budget">0</span></p>
           </div>
           <div class="status-card">
-            <h3>People Served</h3>
+            <div class="status-label">🌍 People Served</div>
             <p><span id="people-served">0</span></p>
           </div>
           <div class="status-card">
-            <h3>Village</h3>
+            <div class="status-label">📍 Village</div>
             <p><span id="village-number">1</span> / <span id="village-total">1</span></p>
           </div>
-        </div>
-
-        <div class="game-panel village-card">
-          <h3 id="village-name">Village Name</h3>
-          <p class="village-detail"><strong>Population:</strong> <span id="village-population">0</span></p>
-          <p class="village-detail"><strong>Problem:</strong> <span id="village-problem">Village water needs.</span></p>
-          <div class="solution-list">
-            <button id="solution-0" class="solution-button">Choose solution</button>
-            <button id="solution-1" class="solution-button">Choose solution</button>
-            <button id="solution-2" class="solution-button">Choose solution</button>
+          <div class="status-card status-note">
+            <div class="status-label">How it works</div>
+            <p>Pick a solution to spend budget, then click Next Village to continue.</p>
           </div>
+        </aside>
+
+        <article class="game-panel village-card">
+          <div class="village-top-row">
+            <div>
+              <p class="village-label">Current Village</p>
+              <h3 id="village-name">Village Name</h3>
+            </div>
+            <div class="village-chip">Population: <strong><span id="village-population">0</span></strong></div>
+          </div>
+
+          <p class="village-detail"><strong>Problem:</strong> <span id="village-problem">Village water needs.</span></p>
+
+          <div class="solution-list">
+            <button id="solution-0" class="solution-button"><span class="solution-title">Choose solution</span></button>
+            <button id="solution-1" class="solution-button"><span class="solution-title">Choose solution</span></button>
+            <button id="solution-2" class="solution-button"><span class="solution-title">Choose solution</span></button>
+          </div>
+
           <div id="result-box" class="result-box">Choose a solution to help this village.</div>
+
           <div class="control-row">
             <button id="next-button" class="next-button">Next Village</button>
             <button id="restart-button" class="restart-button">Restart Game</button>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
