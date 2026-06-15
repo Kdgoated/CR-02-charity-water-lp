@@ -10,27 +10,53 @@
     <!-- Hero Section: This is the main banner at the top of the page -->
     <section class="hero">
         <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
+        <h1>Clean Drop</h1>
         <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
+        <p>Use your budget to build clean water systems for real village challenges.</p>
     </section>
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
+    <!-- Game Section: This is the main game area -->
+    <section class="game-section">
+      <h2>Play: Help More People</h2>
+      <div class="game-grid">
+        <div class="game-panel">
+          <div class="status-card">
+            <h3>Budget</h3>
+            <p>$<span id="budget">0</span></p>
+          </div>
+          <div class="status-card">
+            <h3>People Served</h3>
+            <p><span id="people-served">0</span></p>
+          </div>
+          <div class="status-card">
+            <h3>Village</h3>
+            <p><span id="village-number">1</span> / <span id="village-total">1</span></p>
+          </div>
+        </div>
+
+        <div class="game-panel village-card">
+          <h3 id="village-name">Village Name</h3>
+          <p class="village-detail"><strong>Population:</strong> <span id="village-population">0</span></p>
+          <p class="village-detail"><strong>Problem:</strong> <span id="village-problem">Village water needs.</span></p>
+          <div class="solution-list">
+            <button id="solution-0" class="solution-button">Choose solution</button>
+            <button id="solution-1" class="solution-button">Choose solution</button>
+            <button id="solution-2" class="solution-button">Choose solution</button>
+          </div>
+          <div id="result-box" class="result-box">Choose a solution to help this village.</div>
+          <div class="control-row">
+            <button id="next-button" class="next-button">Next Village</button>
+            <button id="restart-button" class="restart-button">Restart Game</button>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Real-World Impact Story Section -->
+    <!-- Impact Story Section -->
     <section class="impact-story">
-        <!-- Section headline -->
         <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
         <div class="impact-content">
-            <!-- Impact image -->
             <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
             <p>
                 Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
             </p>
@@ -43,5 +69,7 @@
         <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
         <a href="#" class="donate-button">Donate Now</a>
     </section>
+
+    <script src="script.js"></script>
 </body>
 </html>

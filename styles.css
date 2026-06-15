@@ -18,6 +18,20 @@ Fonts:
 
 */
 
+:root {
+  --yellow: #FFC907;
+  --blue: #2E9DF7;
+  --light-blue: #8BD1CB;
+  --green: #4FCB53;
+  --orange: #FF902A;
+  --red: #F5402C;
+  --dark-green: #159A48;
+  --pink: #F16061;
+  --body-bg: #f4f8fb;
+  --text: #222;
+  --section-bg: #ffffff;
+}
+
 /* 
   Charity: Water Landing Page Styles
   This CSS uses the provided color palette and beginner-friendly styles.
@@ -25,11 +39,11 @@ Fonts:
 
 /* Set up the main font and background color for the whole page */
 body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
+  background-color: var(--body-bg);
   font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  color: #222;
+  color: var(--text);
 }
 
 /* Add a slight shadow and rounded corners to each section for depth */
@@ -57,7 +71,7 @@ section {
   /* Add a dark overlay for better text readability */
   /* This uses a simple linear-gradient overlay */
   background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
+  background-color: rgba(46, 157, 247, 0.55); /* Brand blue overlay */
 }
 
 /* Make the headline bold and modern */
@@ -78,15 +92,15 @@ section {
 
 /* Story Section Styles */
 .story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
+  background-color: var(--light-blue); /* Secondary Light Blue */
+  color: var(--text);
   text-align: center;
   padding: 30px 20px;
 }
 
 /* Add accent color to section headings */
 h2 {
-  color: #2E9DF7; /* Primary blue */
+  color: var(--blue); /* Primary blue */
   margin-top: 0;
   font-weight: bold;
 }
@@ -97,6 +111,108 @@ h2 {
   color: #222;
   text-align: center;
   padding: 30px 20px;
+}
+
+/* Game Section Styles */
+.game-section {
+  background-color: #eaf7ff;
+  padding: 20px;
+}
+
+.game-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.game-panel {
+  padding: 20px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 2px 14px rgba(46, 157, 247, 0.08);
+}
+
+.status-card {
+  background: #f9fdff;
+  border: 1px solid #d8eef9;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.status-card h3 {
+  margin: 0 0 6px;
+  color: var(--dark-green);
+}
+
+.status-card p {
+  font-size: 1.4em;
+  margin: 0;
+  font-weight: bold;
+}
+
+.village-card h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.village-detail {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.solution-list {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.solution-button,
+.next-button,
+.restart-button {
+  width: 100%;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.solution-button:hover,
+.next-button:hover,
+.restart-button:hover {
+  background: var(--dark-green);
+  transform: translateY(-1px);
+}
+
+.result-box {
+  background: #f0fcf8;
+  border: 1px solid #c8f0dc;
+  border-radius: 10px;
+  padding: 16px;
+  color: #0f4f27;
+  margin-bottom: 16px;
+}
+
+.control-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.next-button {
+  flex: 1;
+}
+
+.restart-button {
+  background: var(--orange);
+}
+
+.restart-button:hover {
+  background: var(--pink);
 }
 
 /* Style the impact story image */
@@ -111,7 +227,7 @@ h2 {
 /* Donate Button Styles */
 .donate-button {
   display: inline-block;
-  background-color: #4FCB53; /* Green */
+  background-color: var(--green); /* Brand green */
   color: #fff;
   padding: 14px 32px;
   text-decoration: none;
@@ -127,7 +243,7 @@ h2 {
 
 /* Change button color when hovered */
 .donate-button:hover {
-  background-color: #159A48; /* Dark Green */
+  background-color: var(--dark-green); /* Dark Green */
   transform: translateY(-2px) scale(1.04); /* Slight lift */
 }
 
